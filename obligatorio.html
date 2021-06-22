@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="obligatorio.css" />
+    <script src="js/clases.js"></script>
+    <script src="js/acciones.js"></script>
+
+    <title>Obligatorio</title>
+</head>
+
+<body>
+
+
+
+
+
+    <main>
+
+
+
+
+        <header id="menu" class="menu">
+            <br>
+            <h1>Sistema de Donaciones</h1>
+            <img src="Img/logo-donacion_23-2147503731.jpeg" id="imagen" class="imagen" alt="Imagen">
+            <br>
+            <br>
+
+            <nav>
+
+                <ul class="ul-style">
+
+                    <li class="lista"><a href="#registroDonantes">Donante</a></li>
+                    <li>
+                        <p></p>
+                    </li>
+
+
+                    <li class="lista"><a href="#registroDonaciones">Donaciones</a></li>
+                    <li>
+                        <p></p>
+                    </li>
+
+
+                    <li class="lista"><a href="#estadisticas">Estadisticas</a></li>
+                    <li>
+                        <p></p>
+                    </li>
+
+
+                </ul>
+
+            </nav>
+            <ul class="ul-style" style="margin-bottom: 40px;">
+                <li class="lista2" id="lista2estilo">
+
+                    <p>Total General</p>
+
+                    <p>$2200</p>
+
+                </li>
+
+                <li class="lista2">
+                    <p>Monto Donación Mayor</p>
+                    <p>$1000</p>
+                </li>
+
+            </ul>
+        </header>
+
+
+
+
+
+
+
+        <aside>
+
+            <section id="seccionRegistros">
+
+                <article id="registroDonantes">
+
+                    <h1>Registro de donantes</h1>
+                    <form id="frmIngresodeDatos">
+                        <label for="idNombre">Nombre</label>
+                        <input type="text" required maxlength="30" id="idNombre" placeholder="Nombre">
+
+                        <label for="idDireccion">Direccion</label>
+                        <input type="text" required maxlength="30" id="idDireccion" placeholder="Direccion">
+
+                        <label for="idTelefono">Telefono</label>
+                        <input type="number" required id="idTelefono" placeholder="Telefono">
+                        <input type="button" id="IdBoton" value="Agregar">
+                    </form>
+                </article>
+
+
+                <form id="frmIngresodeDatos2">
+
+                    <article id="registroDonaciones">
+
+
+                        <h1>Registro de donaciones</h1>
+
+
+                        <label for="idDonante" id="colorText">Donante</label>
+                        <select id="idDonante">
+                        
+                    </select>
+
+
+                        <label for="IdModo">Modo</label>
+                        <select id="IdModo">
+                        <option value="1" name="Efectivo" selected>Efectivo</option>
+                        <option value="2">Transferencia</option>
+                        <option value="3">Canje</option>
+                        <option value="4">Mercadería</option>
+                        <option value="5">Cheque</option>
+                        <option value="6">Otros</option>
+                    </select>
+                        <label for="idMonto">Monto</label>
+                        <input type="text" maxlength="30" id="idMonto" required>
+
+                        <label for="idComentarios">Comentarios</label>
+                        <input type="text" maxlength="30" id="idComentarios" required>
+                        <input type="button" id="IdBoton2" value="Agregar">
+
+                    </article>
+                </form>
+            </section>
+
+
+
+
+            <section id="visualizaciondedatos">
+
+                <h3>Donaciones registradas</h3>
+                <p>Orden</p>
+                <input type="radio" name="ordenacion" id="IdMontodecreciente" value="1" checked>
+                <label for="IdMontodecreciente"> Monto Decreciente</label>
+
+                <input type="radio" name="ordenacion" id="IdNombreDonantecreciente" value="2">
+                <label for="IdNombreDonantecreciente"> Nombre Donante creciente</label>
+
+
+
+
+                <table id="tabla">
+                    <tr>
+                        <th id="thdonante">Donante </th>
+                        <th id="thmonto">Monto</th>
+                        <th id="thmodo">Modo</th>
+                        <th id="thcomentarios">Comentarios</th>
+                    </tr>
+
+                </table>
+                <div>
+                    <p> <label for="idResaltarFilas">Resaltar filas <input name="idResaltarFilas" id="idResaltarFilas"
+                                type="checkbox"></label> de monto: <input type="text" id="idDemonto" value="0"></p>
+                </div>
+                <div id="estadisticas">
+                    <h2>Estadisticas</h2>
+
+                    <p>Cantidad total de donaciones: 3</p>
+                    <p>Promedio por donación: 733</p>
+                    <p>Donante que más veces donó: Ana Alvarez</p>
+                </div>
+            </section>
+
+
+
+
+
+        </aside>
+
+
+    </main>
+    <footer>Tomás Gertner 251344, Fernando Gavello 275224 - Programación 1 - 1er. Semestre 2021</footer>
+</body>
+
+</html>

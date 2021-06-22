@@ -1,0 +1,145 @@
+body {
+    background-color: #9e9393;
+    font-family: 'Source Sans Pro', sans-serif;
+}
+
+.rojo {
+    color: red;
+}
+
+.verde {
+    color: green;
+}
+
+main {
+    display: table;
+    margin: 0%;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    background-color: #B9B9B9;
+    width: 20%;
+    padding: 0%;
+    float: left;
+    height: 99.99%;
+    margin-left: -8px;
+}
+
+aside {
+    background-color: #9e9393;
+    width: 80%;
+    padding: 0%;
+    float: right;
+}
+
+section {
+    background-color: #9e9393;
+    padding: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+nav {
+    background-color: #B9B9B9;
+}
+
+footer {
+    background-color: rgb(71, 68, 68);
+    clear: both;
+    text-align: center;
+    color: aliceblue;
+    font-size: 80%;
+    width: 100vw;
+    padding: 10px;
+}
+
+.menu {
+    text-align: center;
+}
+
+.lista {
+    margin: auto;
+    border-radius: 10px;
+    text-align: center;
+    width: 96%;
+    background-color: cadetblue;
+    border-style: solid;
+    border-color: blue;
+    list-style: none;
+    color: blueviolet;
+}
+
+.lista2 {
+    margin: auto;
+    border-radius: 20px;
+    text-align: center;
+    width: 96%;
+    background-color: rgb(47, 113, 199);
+    border-color: rgb(16, 16, 211);
+    border-style: solid;
+    list-style: none;
+    color: white;
+}
+
+.imagen {
+    width: 30%;
+    border-radius: 100%;
+}
+
+h1 {
+    font-size: 30px
+}
+
+h2 {
+    font-size: 25px
+}
+
+p {
+    font-size: 20px
+}
+
+.ul-style {
+    display: inline-block;
+    list-style-type: none;
+    width: 94%;
+    margin-block-start: 1px !important;
+    margin-block-end: 1px !important;
+    margin-inline-start: 0px !important;
+    margin-inline-end: 0px !important;
+    padding-inline-start: 4px !important;
+}
+
+table {
+    width: 90%;
+}
+
+table,
+td,
+th {
+    border: solid 1px;
+    border-color: black;
+}
+
+#thdonante {
+    width: 40%;
+}
+
+#thmonto {
+    width: 18%'
+
+}
+
+#thmodo {
+    width: 9%'
+
+}
+
+#thcomentarios {
+    width: 40%;
+}
+
+#lista2estilo {
+    margin-bottom: 30px;
+}
