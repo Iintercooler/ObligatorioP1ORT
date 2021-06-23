@@ -45,7 +45,9 @@ function agregarDon() {
 function agregarDonac() {
     if (document.getElementById("frmIngresodeDatos2").reportValidity()) {
         let nombre = document.getElementById("idDonante").value
-        let modo = document.getElementById("IdModo").name;
+        let modo = darModo()
+
+
         let monto = document.getElementById("idMonto").value;
         let comentarios = document.getElementById("idComentarios").value;
 
@@ -57,10 +59,23 @@ function agregarDonac() {
     }
 }
 
+function darModo() {
+    let modo = document.getElementById("IdModo").value;
+    let resu;
+    if (modo == 1) { resu = "Efectivo"; }
+    if (modo == 2) { resu = "Transferencia"; }
+    if (modo == 3) { resu = "Canje"; }
+    if (modo == 4) { resu = "Mercadería"; }
+    if (modo == 5) { resu = "Cheque"; }
+    if (modo == 6) { resu = "Otros"; }
+
+    return resu;
+}
 
 
 function CargarTabla() {
 
+    let donantes1 = sistema.darDonantes();
 
     let tabla = document.getElementById("tabla");
     tabla.innerHTML = "";
@@ -74,12 +89,13 @@ function CargarTabla() {
     celdas3.innerHTML = "Modo";
     let celdas4 = fila2.insertCell();
     celdas4.innerHTML = "Comentarios";
-
+    // alert(returnDonante(donantes1, document.getElementById("idDonante").value));
     for (let elem of donaciones) {
 
         let fila = tabla.insertRow();
         let celda1 = fila.insertCell();
-        celda1.innerHTML = elem.donante;
+        let select = document.getElementById("idDonante").value
+        celda1.innerHTML = sistema.returnObjDonante(select);
         let celda2 = fila.insertCell();
         celda2.innerHTML = elem.monto;
         let celda3 = fila.insertCell();

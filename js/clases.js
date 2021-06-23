@@ -1,27 +1,3 @@
-class Sistema {
-    constructor() {
-        this.listaDonantes = [];
-        this.listaDonaciones = [];
-    }
-
-    agregarDonante(donante) {
-        this.listaDonantes.push(donante);
-    }
-
-    darDonantes() {
-        return this.listaDonantes;
-    }
-
-    agregarDonacion(donacion) {
-        this.listaDonaciones.push(donacion);
-    }
-
-    darDonaciones() {
-        return this.listaDonaciones;
-    }
-}
-
-
 class Donante {
     constructor(nombre, direccion, telefono) {
         this.nombre = nombre;
@@ -48,5 +24,43 @@ class Donacion {
         return this.donante + " " + this.modo + " " + this.monto + " " + this.comentarios;
 
     }
+
+}
+
+class Sistema {
+    constructor() {
+        this.listaDonantes = [];
+        this.listaDonaciones = [];
+    }
+
+    agregarDonante(donante) {
+        this.listaDonantes.push(donante);
+    }
+
+    darDonantes() {
+        return this.listaDonantes;
+    }
+
+    agregarDonacion(donacion) {
+        this.listaDonaciones.push(donacion);
+    }
+
+    darDonaciones() {
+        return this.listaDonaciones;
+    }
+
+    returnObjDonante(nombreDonante) {
+        let donanteAux = null;
+        let esta = false;
+        for (let i = 0; this.listaDonantes.length && !esta; i++) {
+            alert(this.listaDonantes[0].nombre);
+            if (this.listaDonantes[i].nombre === nombreDonante) {
+                donanteAux = this.listaDonantes[i];
+            }
+        }
+        return donanteAux;
+    }
+
+
 
 }
