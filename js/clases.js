@@ -45,22 +45,44 @@ class Sistema {
         this.listaDonaciones.push(donacion);
     }
 
+
     darDonaciones() {
         return this.listaDonaciones;
     }
 
-    returnObjDonante(nombreDonante) {
-        let donanteAux = null;
-        let esta = false;
-        for (let i = 0; this.listaDonantes.length && !esta; i++) {
-            alert(this.listaDonantes[0].nombre);
-            if (this.listaDonantes[i].nombre === nombreDonante) {
-                donanteAux = this.listaDonantes[i];
-            }
-        }
-        return donanteAux;
+    ordenarDonacionesporMontos() {
+        return this.listaDonaciones.sort(function(prim, seg) {
+            return seg.monto - prim.monto;
+        });
+
     }
 
+    ordenarDonacionesporNombres() {
 
+
+        let a = new Donante("jose", "Pando", 123);
+        let b = new Donante("marcos", "Pando", 123);
+
+        let c = new Donacion(a, "efectivo", 500, "sin comentarios");
+        let d = new Donacion(b, "efectivo", 600, "sin comentarios");
+
+        let donaciones = [];
+
+        donaciones.push(c);
+        donaciones.push(d);
+
+        function darporNombre(donaciones) {
+            return donaciones.sort(function(prim, seg) {
+                let diff = prim.nombre.localeCompare(seg.nombre);
+
+                return diff;
+            })
+        }
+
+        return darporNombre(donaciones);
+
+
+
+    }
 
 }
