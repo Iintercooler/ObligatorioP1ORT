@@ -111,9 +111,18 @@ p {
     padding-inline-start: 4px !important;
 }
 
-table {
+.tablaoriginal {
     width: 90%;
 }
+
+.resaltar {
+    width: 70%;
+}
+
+
+/* table {
+    width: 90%;
+} */
 
 table,
 td,

@@ -3,7 +3,8 @@ window.addEventListener("load", inicio);
 function inicio() {
     document.getElementById("IdBoton").addEventListener("click", crearDonante);
     document.getElementById("IdBoton2").addEventListener("click", crearDonacion);
-    document.getElementById("IdBoton3").addEventListener("click", CargarTablaPorNombres);
+    document.getElementById("IdBoton3").addEventListener("click", resaltar);
+
 
 }
 
@@ -70,8 +71,17 @@ function crearDonacion() {
         document.getElementById("idComentarios").value = "";
     }
 
-    // CargarTabla(CargarTablaPorMonto());
-    CargarTabla(CargarTablaPorNombres());
+
+    if (document.getElementById("IdMontodecreciente").checked) {
+        CargarTabla(CargarTablaPorMonto());
+        console.log("ordenar por monto checkeado");
+
+    } else {
+
+        console.log("el otro chekeado");
+    }
+
+
 
 }
 
@@ -90,6 +100,7 @@ function darModo() {
 
 
 function CargarTabla(lista) {
+
 
     let tabla = document.getElementById("tabla");
     tabla.innerHTML = "";
@@ -131,9 +142,59 @@ function CargarTablaPorMonto() {
 }
 
 
-function CargarTablaPorNombres() {
-    let tabla = document.getElementById("tabla");
-    let donaciones = sistema.ordenarDonacionesporNombres();
-    console.log(donaciones);
-    return donaciones;
+// function CargarTablaPorNombres() {
+//     let donaciones = sistema.datosdeprueba();
+//     let nombres = [];
+//     let objordenados=[];
+
+//     for (let elem of donaciones) {
+//         nombres.push(elem.donante.nombre);
+//     }
+//     resu=nombres.sort();
+//     let resu2= [];
+//     function returnObjDonante(nombre,listaDeDonantes) {
+//         let donanteAux = null;
+//         let esta = false;
+//         for (let i = 0; i < listaDonantes.length && !esta; i++) {
+//             console.log(listaDeDonantes[i]);
+//             let name = listaDonantes[i].nombre;
+//             if (name == nombre) {
+//                 donanteAux = listaDonantes[i];
+//             }
+//         }
+//         return donanteAux;
+//     }
+
+
+//     for (let nom of nombres){
+//         objordenados.push(returnObjDonante(elem,donaciones))
+
+
+//     }
+//     return resu;
+//}
+
+
+function transformar(valor) {
+    var tablas = document.getElementsByTagName("tabla");
+    for (var i = 0; i < tablas.length; i++) {
+        for (var j = 0; j < tablas[i].rows.length; j++) {
+            if (j == valor) {
+                tablas[i].rows[j].className = "resaltar";
+            }
+        }
+    }
+}
+
+
+
+
+function resaltar() {
+    let checkBox = document.getElementById("idResaltarFilas");
+    let valor = document.getElementById("idDemonto").value;
+
+    if (checkBox.checked = true) {
+        transformar(valor);
+
+    }
 }

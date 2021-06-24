@@ -57,11 +57,11 @@ class Sistema {
 
     }
 
-    ordenarDonacionesporNombres() {
+    datosdeprueba() {
 
 
-        let a = new Donante("jose", "Pando", 123);
-        let b = new Donante("marcos", "Pando", 123);
+        let a = new Donante("b", "Pando", 123);
+        let b = new Donante("a", "Pando", 123);
 
         let c = new Donacion(a, "efectivo", 500, "sin comentarios");
         let d = new Donacion(b, "efectivo", 600, "sin comentarios");
@@ -71,16 +71,16 @@ class Sistema {
         donaciones.push(c);
         donaciones.push(d);
 
-        function darporNombre(donaciones) {
-            return donaciones.sort(function(prim, seg) {
-                let diff = prim.nombre.localeCompare(seg.nombre);
+        // function darporNombre(donaciones) {
+        //     return donaciones.sort(function(prim, seg) {
+        //         let diff = prim.nombre.localeCompare(seg.nombre);
 
-                return diff;
-            })
-        }
+        //         return diff;
+        //     })
+        // }
 
-        return darporNombre(donaciones);
-
+        // return darporNombre(donaciones);
+        return donaciones;
 
 
     }
