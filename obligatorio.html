@@ -59,15 +59,15 @@
             <ul class="ul-style" style="margin-bottom: 40px;">
                 <li class="lista2" id="lista2estilo">
 
-                    <p>Total General</p>
+                    <p>Total General:</p>
 
-                    <p>$2200</p>
+                    <p id="totalGeneral"></p>
 
                 </li>
 
                 <li class="lista2">
-                    <p>Monto Donación Mayor</p>
-                    <p>$1000</p>
+                    <p>Monto Donación Mayor:</p>
+                    <p id="idMayorDonacion"></p>
                 </li>
 
             </ul>
@@ -88,13 +88,15 @@
                     <h1>Registro de donantes</h1>
                     <form id="frmIngresodeDatos">
                         <label for="idNombre">Nombre</label>
-                        <input type="text" required maxlength="30" id="idNombre" placeholder="Nombre">
+                        <input type="text" required maxlength="20" id="idNombre" placeholder="Nombre">
+                        <span class="rojo" id="errorNombre"></span>
+
 
                         <label for="idDireccion">Direccion</label>
-                        <input type="text" required maxlength="30" id="idDireccion" placeholder="Direccion">
+                        <input type="text" required maxlength="20" id="idDireccion" placeholder="Direccion">
 
                         <label for="idTelefono">Telefono</label>
-                        <input type="number" required id="idTelefono" placeholder="Telefono">
+                        <input type="number" required maxlength="20" id="idTelefono" placeholder="Telefono">
                         <input type="button" id="IdBoton" value="Agregar">
                         <input type="button" id="IdBoton3" value="Agregar3">
                     </form>
@@ -122,13 +124,13 @@
                         <option value="3">Canje</option>
                         <option value="4">Mercadería</option>
                         <option value="5">Cheque</option>
-                        <option value="6">Otros</option>
+                        <option value="6">Otros</option>s
                     </select>
                         <label for="idMonto">Monto</label>
-                        <input type="text" maxlength="30" id="idMonto" required>
+                        <input type="number" min="1" maxlength="30" id="idMonto" required>
 
                         <label for="idComentarios">Comentarios</label>
-                        <input type="text" maxlength="30" id="idComentarios" required>
+                        <input type="text" maxlength="20" id="idComentarios">
                         <input type="button" id="IdBoton2" value="Agregar">
 
                     </article>
@@ -167,9 +169,9 @@
                 <div id="estadisticas">
                     <h2>Estadisticas</h2>
 
-                    <p>Cantidad total de donaciones: 3</p>
-                    <p>Promedio por donación: 733</p>
-                    <p>Donante que más veces donó: Ana Alvarez</p>
+                    <p id="CantidadDeDonaciones">Cantidad total de donaciones: </p>
+                    <p id="promedioDonaciones">Promedio por donación:</p>
+                    <p id="masVecesDono">Donante que más veces donó:</p>
                 </div>
             </section>
 
