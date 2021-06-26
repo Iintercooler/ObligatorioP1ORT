@@ -4,6 +4,7 @@ function inicio() {
     document.getElementById("IdBoton").addEventListener("click", crearDonante);
     document.getElementById("IdBoton2").addEventListener("click", crearDonacion);
     document.getElementById("idResaltarFilas").addEventListener("click", pintar);
+
 }
 
 let sistema = new Sistema();
@@ -17,7 +18,7 @@ function crearDonante() {
         if (sistema.darDonantes() != null) { //Verificamos si hay donantes registrados, si no los hay, directamente lo registramos, si los hay preguntamos si ya no esta registrado
 
             if (!existeDonante(nombre, sistema.darDonantes())) { // si el donante no esta registrado, lo registramos
-                let donante1 = new Donante(nombre, direcccion, telefono);
+                let donante1 = new Donante(nombre, direcccion, telefono, 0);
                 sistema.agregarDonante(donante1); //Agrega el objeto donante al array de donantes
 
                 //Agrega al select el objeto donante creado
@@ -73,12 +74,15 @@ function crearDonacion() { //obtenemos el objeto entero de el donante a partir d
         }
 
         let objdonante = returnObjDonante(nombre, listaDeDonantes);
+        objdonante.cantidad = objdonante.cantidad + 1;
+        console.log(objdonante.cantidad);
         let modo = darModo();
         let monto = parseInt(document.getElementById("idMonto").value);
         let comentarios = document.getElementById("idComentarios").value;
 
         //Creamos el objeto donacion y lo agregamos a la lista de donaciones
         let donancion1 = new Donacion(objdonante, modo, monto, comentarios);
+
         //let nombresDeDonantes = [];
         //nombresDeDonantes.push(objdonante.nombre);
         sistema.agregarDonacion(donancion1);
@@ -96,7 +100,7 @@ function crearDonacion() { //obtenemos el objeto entero de el donante a partir d
         console.log("el otro chekeado");
     }
 
-
+    maximoDonaciones();
 
 }
 //Funcion que dada una donacion nos retorna el modo como string leido desde el select
@@ -236,7 +240,7 @@ function promedioDedonaciones(lista) {
         aux = aux + ele.monto;
 
     }
-    promedio = aux / lista.length;
+    promedio = Math.trunc(aux / lista.length);
     document.getElementById("promedioDonaciones").innerHTML = ("Promedio por donacion: " + promedio);
 }
 
@@ -282,7 +286,7 @@ function existeDonante(nombre, lista) {
     return resu;
 }
 
-//Funcion necesaria que dada una lista de donaciones, retorna en un array el modo de donacion y la cantidad de donaciones por modo, para luego hacer la grafica
+//Funcion necesaria que dada una lista de donaciones, retorna en un array el modo de donacion y la cantidad de donaciones por modo
 function DonacionPorModo() {
     let donaciones = sistema.darDonaciones();
     let modos = [
@@ -364,4 +368,47 @@ function prueba() {
         }
     }
     console.log(contador);
+}
+
+
+
+function maximoDonaciones() {
+
+    let listaDonantes = sistema.darDonantes();
+
+    let mayor = 0;
+
+    for (let elem of listaDonantes) {
+        if (elem.cantidad > mayor) {
+            mayor = elem.cantidad
+
+        }
+
+    }
+
+    console.log(returnNombreDonante(mayor, listaDonantes));
+    document.getElementById("masVecesDono").innerHTML = "Donante que más veces donó: " + returnNombreDonante(mayor, listaDonantes);
+
+
+    function returnNombreDonante(cantidaddada, listaDonantes) { //Funcion que a partir de un nombre retorna todo el objeto de la lista de donantes.
+        console.log(listaDonantes);
+        let donanteAux = null;
+
+        for (let i = 0; i < listaDonantes.length; i++) {
+            if (listaDonantes[i].cantidad != 0) {
+                if (cantidaddada == listaDonantes[i].cantidad) {
+                    donanteAux = listaDonantes[i].nombre;
+
+                    return donanteAux;
+                }
+            }
+        }
+
+    }
+
+
+
+
+
+
 }

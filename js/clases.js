@@ -1,9 +1,14 @@
 class Donante {
-    constructor(nombre, direccion, telefono) {
+    constructor(nombre, direccion, telefono, cantidad) {
         this.nombre = nombre;
         this.direccion = direccion;
         this.telefono = telefono;
+        this.cantidad = cantidad;
+
+
     }
+
+
 
     toString() {
         return this.nombre + " " + this.direccion + " " + this.telefono;
@@ -54,12 +59,12 @@ class Sistema {
 
         }
         // Metodo no resuelto 
-        // ordenarDonacionesporNombres(listaDonaciones) {
-        //     return listaDonaciones.donacion.sort(function(prim, seg) {
-        //         return seg.nombre - prim.nombre;
-        //     });
+    ordenarDonacionesporNombres() {
+        return this.listaDonaciones[0].sort(function(prim, seg) {
+            return seg.nombre.localeCompare(prim.nombre);
+        });
 
-    // }
+    }
 
     DonacionPorModo() {
         let donaciones = this.darDonaciones();
