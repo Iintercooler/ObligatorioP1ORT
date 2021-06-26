@@ -104,11 +104,11 @@ p {
     display: inline-block;
     list-style-type: none;
     width: 94%;
-    margin-block-start: 1px !important;
-    margin-block-end: 1px !important;
-    margin-inline-start: 0px !important;
-    margin-inline-end: 0px !important;
-    padding-inline-start: 4px !important;
+    margin-block-start: 1px;
+    margin-block-end: 1px;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 4px;
 }
 
 .tablaoriginal {
@@ -118,11 +118,6 @@ p {
 .resaltar {
     width: 70%;
 }
-
-
-/* table {
-    width: 90%;
-} */
 
 table,
 td,
@@ -137,13 +132,11 @@ th {
 }
 
 #thmonto {
-    width: 18%'
-
+    width: 18%
 }
 
 #thmodo {
-    width: 9%'
-
+    width: 9%
 }
 
 #thcomentarios {
@@ -152,4 +145,10 @@ th {
 
 #lista2estilo {
     margin-bottom: 30px;
+}
+
+#piechart_3d {
+    width: 600px;
+    height: 300px;
+    fill: #9e9393;
 }
